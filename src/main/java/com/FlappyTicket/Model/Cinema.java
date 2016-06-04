@@ -12,10 +12,12 @@ public class Cinema {
 	
 	private String cEmail;
 	
-	public Cinema(int cid, String cName, String cAddress) {
+	public Cinema(int cid, String cName, String cAddress, String cTel, String cEmail) {
 		this.setCid(cid);
 		this.setcName(cName);
 		this.setcAddress(cAddress);
+		this.setcTel(cTel);
+		this.setcEmail(cEmail);
 	}
 
 	public int getCid() {
@@ -59,7 +61,6 @@ public class Cinema {
 	}
 	
 	public Cinema() {
-		super();
 	}
 	
 }
