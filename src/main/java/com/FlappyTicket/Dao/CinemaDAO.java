@@ -44,7 +44,7 @@ public class CinemaDAO {
 		jdbcTemplate.update(
 				new PreparedStatementCreator() {
 					public PreparedStatement createPreparedStatement(Connection conn) throws SQLException {
-						PreparedStatement st = conn.prepareStatement("insert into cinema(CName, CAddress, CTel, CEmail) values (?, ?, ?, ?)", new String[]{"id"});
+						PreparedStatement st = conn.prepareStatement("insert into cinema(CName, CAddress, CTel, CEmail) values (?, ?, ?, ?)", new String[]{"CID"});
 						st.setString(1, cinema.getcName());
 						st.setString(2, cinema.getcAddress());
 						st.setString(3, cinema.getcTel());

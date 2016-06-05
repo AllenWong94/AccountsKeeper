@@ -44,7 +44,7 @@ public class MovieDAO {
 		jdbcTemplate.update(
 				new PreparedStatementCreator() {
 					public PreparedStatement createPreparedStatement(Connection conn) throws SQLException {
-						PreparedStatement st = conn.prepareStatement("insert into Movie(MName, MType, MDetail, MTime, MPicture) values (?, ?, ?, ?, ?)", new String[]{"id"});
+						PreparedStatement st = conn.prepareStatement("insert into Movie(MName, MType, MDetail, MTime, MPicture) values (?, ?, ?, ?, ?)", new String[]{"MID"});
 						st.setString(1, Movie.getmName());
 						st.setString(2, Movie.getmType());
 						st.setString(3, Movie.getmDetail());
