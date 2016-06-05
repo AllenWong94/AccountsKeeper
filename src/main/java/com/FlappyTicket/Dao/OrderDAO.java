@@ -31,7 +31,7 @@ public class OrderDAO {
 		}
 	}
 	
-	public List<Order> findByUid(int uid) {
+	public List<Order> findByUID(int uid) {
 		try {
 			return jdbcTemplate.query("select * from order where UID = ?", new BeanPropertyRowMapper<Order>(Order.class), uid);
 		} catch (EmptyResultDataAccessException e) {
