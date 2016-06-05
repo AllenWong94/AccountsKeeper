@@ -14,6 +14,7 @@ import com.FlappyTicket.Dao.*;
 public class MovieService {
 	@Autowired
 	private MovieDAO movieDAO;
+	@Autowired
 	private SessionService sessionservice;
 	
 	public List<Movie> findAll() {
@@ -28,7 +29,7 @@ public class MovieService {
 		List<Session> Slist = sessionservice.findByCID(CID);
 		
 		for (int i = 0; i < Slist.size(); i++) {
-			set.add(Slist.get(i).getMid());
+			set.add(new Integer(Slist.get(i).getMid()));
 		}
 		
 		for (Integer value: set) {
@@ -37,6 +38,5 @@ public class MovieService {
 		return res;
 		
 	}
-	
 	
 }

@@ -20,7 +20,7 @@ public class SessionService {
 	}
 	
 	public List<Session> findByMID(int CID) {
-		return sessionDAO.findByMID(CID); //找出电影院所有场次    改名MID
+		return sessionDAO.findByMID(CID); //找出电影院所有场次    findByID改名为findByMID;
 		
 	}
 	
@@ -33,5 +33,6 @@ public class SessionService {
 		return sessionDAO.findByCMID(CID, MID); //找出电影院指定电影所有场次
 		
 	}
+	
 	
 }
