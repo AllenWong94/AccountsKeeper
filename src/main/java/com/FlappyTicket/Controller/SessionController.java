@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.FlappyTicket.Service.*;
 
 @Controller
-@RequestMapping(value = "Movie")
+@RequestMapping(value = "Session")
 
 public class SessionController {
 	

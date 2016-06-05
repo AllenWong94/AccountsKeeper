@@ -19,8 +19,22 @@ import com.FlappyTicket.Service.*;
 @Controller
 @RequestMapping(value = "Order")
 
-public class OrderController {
-
+public class UserController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	
+	@Autowired
+	private UserService userService;
+	
+	@RequestMapping(value = "login", method = RequestMethod.GET)
+	@ResponseBody
+	public Object getSessionByID(@RequestParam("CID") String name, @RequestParam("MID") String password) {
+		
+		return userService.login(name, password); //返回某电影院某电影所有场次
+		
+	}
+	
+	
 	
 }
 
