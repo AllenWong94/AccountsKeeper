@@ -15,8 +15,7 @@ public class Order {
 	
 	public Order() {}
 	
-	public Order(int oid, int uid, int sid, int OSeatNumber, String OSeatInfo, int OPayState) {
-		this.setOid(oid);
+	public Order(int uid, int sid, int OSeatNumber, String OSeatInfo, int OPayState) {
 		this.setUid(uid);
 		this.setSid(sid);
 		this.setOSeatNumber(OSeatNumber);
