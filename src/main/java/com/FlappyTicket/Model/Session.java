@@ -13,6 +13,10 @@ public class Session {
 	private String sName;
 	
 	private String sTimeThrough;
+	
+	private int sPrice;
+	
+	private String sDay;
 
 	public int getSid() {
 		return sid;
@@ -62,15 +66,33 @@ public class Session {
 		this.sTimeThrough = sTimeThrough;
 	}
 	
-	public Session(int sid, int cid, int mid, int seid, String sName, String sTimeThrough) {
+	public Session(int sid, int cid, int mid, int seid, String sName, String sTimeThrough, int sPrice, String sDay) {
 		this.setSid(sid);
 		this.setCid(cid);
 		this.setMid(mid);
 		this.setSeid(seid);
 		this.setsName(sName);
 		this.setsTimeThrough(sTimeThrough);
+		this.setsPrice(sPrice);
+		this.setsDay(sDay);
 	}
 	public Session() {
+	}
+
+	public int getsPrice() {
+		return sPrice;
+	}
+
+	public void setsPrice(int sPrice) {
+		this.sPrice = sPrice;
+	}
+
+	public String getsDay() {
+		return sDay;
+	}
+
+	public void setsDay(String sDay) {
+		this.sDay = sDay;
 	}
 	
 }

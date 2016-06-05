@@ -55,17 +55,19 @@ public class SessionDAO {
 		}
 	}
 	
-	/*public int insert(final Session Session) {
+	public int insert(final Session Session) {
 		KeyHolder generatedKeyHolder = new GeneratedKeyHolder();
 		jdbcTemplate.update(
 				new PreparedStatementCreator() {
 					public PreparedStatement createPreparedStatement(Connection conn) throws SQLException {
-						PreparedStatement st = conn.prepareStatement("insert into Session(MName, MType, MDetail, MTime, MPicture) values (?, ?, ?, ?, ?)", new String[]{"id"});
-						st.setString(1, Session.getmName());
-						st.setString(2, Session.getmType());
-						st.setString(3, Session.getmDetail());
-						st.setString(4, Session.getmTime());
-						st.setString(5, Session.getmPicture());
+						PreparedStatement st = conn.prepareStatement("insert into session(CID, MID, SEID, SName, STimeThrough, SPrice, SDay) values (?, ?, ?, ?, ?, ?, ?)", new String[]{"SID"});
+						st.setInt(1, Session.getCid());
+						st.setInt(2, Session.getMid());
+						st.setInt(3, Session.getSeid());
+						st.setString(4, Session.getsName());
+						st.setString(5, Session.getsTimeThrough());
+						st.setInt(6, Session.getsPrice());
+						st.setString(7, Session.getsDay());
 						return st;
 					}
 				}, generatedKeyHolder
@@ -74,12 +76,12 @@ public class SessionDAO {
 	}
 	
 	public int update(final Session Session) {
-		return jdbcTemplate.update("update Session set MName = ?, MType = ?, MDetail = ?, MTime = ?, MPicture = ? where MID = ?", 
-				new Object[] {Session.getmName(), Session.getmType(), Session.getmDetail(), Session.getmTime(), Session.getmPicture(), Session.getMid()});
+		return jdbcTemplate.update("update session set CID = ?, MID = ?, SEID = ?, SName = ?, STimeThrough = ?, SPrice = ?, SDay = ? where SID = ?", 
+				new Object[] {Session.getCid(), Session.getMid(), Session.getSeid(), Session.getsName(), Session.getsTimeThrough(), Session.getsPrice(), Session.getsDay(), Session.getSid()});
 	}
 	
-	public int delete(int mid) {
-		return jdbcTemplate.update("delete from Session where MID =" + mid + "");
-	}*/
+	public int delete(int sid) {
+		return jdbcTemplate.update("delete from session where SID =" + sid + "");
+	}
 	
 }
