@@ -65,9 +65,9 @@ public class UserDAO {
 		return generatedKeyHolder.getKey().intValue();
 	}
 	
-	public int update(final User User) {
-		return jdbcTemplate.update("update user set UName = ?, UPassword = ?, UTel = ?, UEail = ? where UID = ?", 
-				new Object[] {User.getuName(), User.getuPassword(), User.getuTel(), User.getuScore(), User.getUid()});
+	public int update(final User user) {
+		return jdbcTemplate.update("update user set UName = ?, UPassword = ?, UTel = ?, UScore = ? where UID = ?", 
+				new Object[] {user.getuName(), user.getuPassword(), user.getuTel(), user.getuScore(), user.getUid()});
 	}
 	
 	public int delete(int uid) {
