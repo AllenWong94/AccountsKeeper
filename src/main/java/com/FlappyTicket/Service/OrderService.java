@@ -17,11 +17,37 @@ public class OrderService {
 	@Autowired
 	private OrderDAO orderDAO;
 	
+	@Autowired
+	private UserDAO userDAO;
 	
-	public List<Order> findByUID(int UID) {
-		List<Order> Olist = (List<Order>) orderDAO.findById(UID);
-		return Olist;
+	@Autowired
+	private SeatDAO seatDAO;
+	
+	@Autowired
+	private SessionDAO sessionDAO;
+	
+	
+	public Object findByUname(String name) {
 		
+		return orderDAO.findByUID(userDAO.findByUserName(name).getUid());
+		
+	}
+	
+	
+	public Object newOrder(String Uname, int Sid, int SeatNum) {
+		Map<String, Object>map = new HashMap<String, Object>();
+		int Uid = userDAO.findByUserName(Uname).getUid();
+		String SeatInfo = SeatDAO.getSeatInfo(SeatNum, seatDAO.findById(sessionDAO.findById(Sid).getSeid()));
+		int Oid = orderDAO.insert(new Order(Uid, Sid, SeatNum, SeatInfo, 0));
+		map.put("Ordernum", Oid);
+		
+	}
+	
+	public Object payOrder(int Oid) {
+		Order tmp = orderDAO.findById(Oid);
+		tmp.setOPayState(1);
+		orderDAO.update(tmp);
+		return "1";
 	}
 	
 }

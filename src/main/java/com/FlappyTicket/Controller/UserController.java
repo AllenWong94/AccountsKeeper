@@ -58,6 +58,14 @@ public class UserController {
 		
 	}
 	
+	@RequestMapping(value = "modifyscore", method = RequestMethod.GET)
+	@ResponseBody
+	public Object modifyscore(@RequestParam("name") String name, @RequestParam("pass") String pass, @RequestParam("newscore") int newscore) {
+		
+		return userService.modifyscore(name, pass, newscore); //返回某电影院某电影所有场次
+		
+	}
+	
 	
 	
 	

@@ -17,40 +17,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.FlappyTicket.Service.*;
 
 @Controller
-@RequestMapping(value = "Cinema")
+@RequestMapping(value = "Search")
 
-public class CinemaController {
+public class SearchController {
 	
 	@Autowired
-	private CinemaService cinemaService;
+	private SearchService SearchService;
 	
-	@RequestMapping(value = "AllCinemaList", method = RequestMethod.GET)
+	
+	@RequestMapping(value = "", method = RequestMethod.GET)
 	@ResponseBody
-	public Object getCurrentMovieList() {
-		return cinemaService.findAll();
+	public Object findByName(@RequestParam("text") String text) {
 		
-	}
-	
-	
-	@RequestMapping(value = "FindByMID", method = RequestMethod.GET)
-	@ResponseBody
-	public Object getCinemaByMID(@RequestParam("MID") int id) {
-		
-		
-		return cinemaService.findByMID(id);
+		return SearchService.findByName(text);
 		
 	}
 
-
-	@RequestMapping(value = "Search", method = RequestMethod.GET)
-	@ResponseBody
-	public Object search(@RequestParam("MID") int id) {
-		
-		
-		return cinemaService.findByMID(id);
-		
-	}
-	
 	
 }
 
