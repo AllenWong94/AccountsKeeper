@@ -20,12 +20,12 @@ public class UserService {
 	private SessionService sessionservice;
 	
 	public Object login(String name, String password) {
-		List<Movie> list = userDAO.login(name, password);
+		List<User> list = userDAO.login(name, password);
 		Map<String, String> map = new HashMap<String, String>();
 		if (list.size() == 0) {
-			map.put("Status", "Success");
-		} else {
 			map.put("Status", "Fail");
+		} else {
+			map.put("Status", "Success");
 		}
 		return map;
 	}
@@ -36,7 +36,7 @@ public class UserService {
 		Map<String, String> map = new HashMap<String, String>();
 		boolean flag = true;
 		for (int i = 0; i < userlist.size(); i++) {
-			if (userlist.get(i).getName().isequal(name)) {
+			if (userlist.get(i).getuName().equals(name)) {
 				flag = false;
 				break;
 			}
@@ -49,5 +49,29 @@ public class UserService {
 		}
 		return map;
 	}
+	
+	public Object modifypass(String name, String pass, String newpass) {
+		Map<String, String> status = (Map<String, String>) this.login(name, pass);		
+		if (status.get("Status").equals("Success")) {
+			User tmp = userDAO.findByUserName(name);
+			tmp.setuPassword(newpass);
+			userDAO.update(tmp);
+		}
+		
+		return status;
+	}
+	
+	public Object modifytel(String name, String pass, String newtel) {
+		Map<String, String> status = (Map<String, String>) this.login(name, pass);		
+		if (status.get("Status").equals("Success")) {
+			User tmp = userDAO.findByUserName(name);
+			tmp.setuTel(newtel);;
+			userDAO.update(tmp);
+		}
+		return status;
+	}
+	
+	
+	
 		
 }

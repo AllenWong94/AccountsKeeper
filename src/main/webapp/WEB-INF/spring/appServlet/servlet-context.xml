@@ -49,11 +49,17 @@
 	<!-- DAOs -->
 	
 	<beans:bean id="cinemaDAO" class="com.FlappyTicket.Dao.CinemaDAO" />
-	<beans:bean id="cinemaService" class="com.FlappyTicket.Service.CinemaService" />
+	<beans:bean id="UserDAO" class="com.FlappyTicket.Dao.UserDAO" />
+	<beans:bean id="OrderDAO" class="com.FlappyTicket.Dao.OrderDAO" />
 	<beans:bean id="movieDAO" class="com.FlappyTicket.Dao.MovieDAO" />
-	<beans:bean id="movieService" class="com.FlappyTicket.Service.MovieService" />
 	<beans:bean id="sessionDAO" class="com.FlappyTicket.Dao.SessionDAO" />
+	
+	
+	<beans:bean id="cinemaService" class="com.FlappyTicket.Service.CinemaService" />
+	<beans:bean id="movieService" class="com.FlappyTicket.Service.MovieService" />
 	<beans:bean id="sessionService" class="com.FlappyTicket.Service.SessionService" />
+	<beans:bean id="UserService" class="com.FlappyTicket.Service.UserService" />
+	<beans:bean id="OrderService" class="com.FlappyTicket.Service.OrderService" />
 	
 </beans:beans>
 
