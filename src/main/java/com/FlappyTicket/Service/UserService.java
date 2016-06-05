@@ -71,6 +71,7 @@ public class UserService {
 		return status;
 	}
 	
+
 	public Object modifyscore(String name, String pass, int newscore) {
 		Map<String, String> status = (Map<String, String>) this.login(name, pass);		
 		if (status.get("Status").equals("Success")) {
@@ -80,8 +81,5 @@ public class UserService {
 		}
 		return status;
 	}
-	
-	
-	
-		
+
 }

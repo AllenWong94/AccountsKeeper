@@ -13,7 +13,6 @@ import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 
-import com.FlappyTicket.Model.Order;
 import com.FlappyTicket.Model.User;
 
 public class UserDAO {

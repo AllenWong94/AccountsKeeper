@@ -39,6 +39,14 @@ public class CinemaDAO {
 		}
 	}
 	
+	public List<Cinema> findByCinemaNameLike(String cname) {
+		try {
+			return jdbcTemplate.query("select * from cinema where CName like ?", new BeanPropertyRowMapper<Cinema>(Cinema.class), '%'+cname+'%');
+		} catch (EmptyResultDataAccessException e) {
+			return null;
+		}
+	}
+	
 	public int insert(final Cinema cinema) {
 		KeyHolder generatedKeyHolder = new GeneratedKeyHolder();
 		jdbcTemplate.update(

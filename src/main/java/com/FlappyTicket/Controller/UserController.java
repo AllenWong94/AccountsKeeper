@@ -57,7 +57,7 @@ public class UserController {
 		return userService.modifytel(name, pass, newtel); //返回某电影院某电影所有场次
 		
 	}
-	
+
 	@RequestMapping(value = "modifyscore", method = RequestMethod.GET)
 	@ResponseBody
 	public Object modifyscore(@RequestParam("name") String name, @RequestParam("pass") String pass, @RequestParam("newscore") int newscore) {
@@ -65,9 +65,6 @@ public class UserController {
 		return userService.modifyscore(name, pass, newscore); //返回某电影院某电影所有场次
 		
 	}
-	
-	
-	
 	
 }
 

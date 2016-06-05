@@ -7,21 +7,22 @@ public class Order {
 	
 	private int sid;
 	
-	private int OSeatNumber;
+	private int oSeatNumber;
 	
-	private String OSeatInfo;
+	private int oPayState; 
 	
-	private int OPayState; 
+	private String oSeatInfo;
 	
+
 	public Order() {}
 	
-	public Order(int oid, int uid, int sid, int OSeatNumber, String OSeatInfo, int OPayState) {
+	public Order(int oid, int uid, int sid, int oSeatNumber, String oSeatInfo, int oPayState) {
 		this.setOid(oid);
 		this.setUid(uid);
 		this.setSid(sid);
-		this.setOSeatNumber(OSeatNumber);
-		this.setOSeatInfo(OSeatInfo);
-		this.setOPayState(OPayState);
+		this.setoSeatNumber(oSeatNumber);
+		this.setoSeatInfo(oSeatInfo);
+		this.setoPayState(oPayState);
 	}
 
 	public int getOid() {
@@ -48,27 +49,27 @@ public class Order {
 		this.sid = sid;
 	}
 
-	public int getOSeatNumber() {
-		return OSeatNumber;
+	public int getoSeatNumber() {
+		return oSeatNumber;
 	}
 
-	public void setOSeatNumber(int oSeatNumber) {
-		OSeatNumber = oSeatNumber;
+	public void setoSeatNumber(int oSeatNumber) {
+		this.oSeatNumber = oSeatNumber;
 	}
 
-	public String getOSeatInfo() {
-		return OSeatInfo;
+	public String getoSeatInfo() {
+		return oSeatInfo;
 	}
 
-	public void setOSeatInfo(String oSeatInfo) {
-		OSeatInfo = oSeatInfo;
+	public void setoSeatInfo(String oSeatInfo) {
+		this.oSeatInfo = oSeatInfo;
 	}
 
-	public int getOPayState() {
-		return OPayState;
+	public int getoPayState() {
+		return oPayState;
 	}
 
-	public void setOPayState(int oPayState) {
-		OPayState = oPayState;
+	public void setoPayState(int oPayState) {
+		this.oPayState = oPayState;
 	}
 }

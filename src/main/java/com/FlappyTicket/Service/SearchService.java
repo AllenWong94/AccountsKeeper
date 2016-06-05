@@ -21,8 +21,8 @@ public class SearchService {
 	private CinemaDAO cinemaDAO;
 		
 	public Object findByName(String name) {
-		Object Mlist = movieDAO.findByMovieName(name);
-		Object Clist = cinemaDAO.findByCinemaName(name);
+		Object Mlist = movieDAO.findByMovieNameLike(name);
+		Object Clist = cinemaDAO.findByCinemaNameLike(name);
 		Map<String, Object>map = new HashMap<String, Object>();
 		map.put("Movie", Mlist);
 		map.put("Cinema", Clist);

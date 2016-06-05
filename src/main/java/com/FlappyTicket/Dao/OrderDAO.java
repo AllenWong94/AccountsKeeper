@@ -20,12 +20,12 @@ public class OrderDAO {
 	private JdbcTemplate jdbcTemplate;
 	
 	public List<Order> findAll() {
-		return jdbcTemplate.query("select * from order", new BeanPropertyRowMapper<Order>(Order.class));
+		return jdbcTemplate.query("select * from olist", new BeanPropertyRowMapper<Order>(Order.class));
 	}
 	
 	public Order findById(int oid) {
 		try {
-			return jdbcTemplate.queryForObject("select * from order where OID = ?", new BeanPropertyRowMapper<Order>(Order.class), oid);
+			return jdbcTemplate.queryForObject("select * from olist where OID = ?", new BeanPropertyRowMapper<Order>(Order.class), oid);
 		} catch (EmptyResultDataAccessException e) {
 			return null;
 		}
@@ -33,7 +33,7 @@ public class OrderDAO {
 	
 	public List<Order> findByUID(int uid) {
 		try {
-			return jdbcTemplate.query("select * from order where UID = ?", new BeanPropertyRowMapper<Order>(Order.class), uid);
+			return jdbcTemplate.query("select * from olist where UID = ?", new BeanPropertyRowMapper<Order>(Order.class), uid);
 		} catch (EmptyResultDataAccessException e) {
 			return null;
 		}
@@ -44,12 +44,12 @@ public class OrderDAO {
 		jdbcTemplate.update(
 				new PreparedStatementCreator() {
 					public PreparedStatement createPreparedStatement(Connection conn) throws SQLException {
-						PreparedStatement st = conn.prepareStatement("insert into order(UID, SID, SeatNumber, SeatInfo, PayState) values (?, ?, ?, ?, ?)", new String[]{"OID"});
+						PreparedStatement st = conn.prepareStatement("insert into olist(UID, SID, OSeatNumber, OSeatInfo, OPayState) values (?, ?, ?, ?, ?)", new String[]{"OID"});
 						st.setInt(1, Order.getUid());
 						st.setInt(2, Order.getSid());
-						st.setInt(3, Order.getOSeatNumber());
-						st.setString(4, Order.getOSeatInfo());
-						st.setInt(5, Order.getOPayState());
+						st.setInt(3, Order.getoSeatNumber());
+						st.setString(4, Order.getoSeatInfo());
+						st.setInt(5, Order.getoPayState());
 						return st;
 					}
 				}, generatedKeyHolder
@@ -58,12 +58,12 @@ public class OrderDAO {
 	}
 	
 	public int update(final Order Order) {
-		return jdbcTemplate.update("update order set UID = ?, SID = ?, SeatNumber = ?, SeatInfo = ?, PayState = ? where OID = ?", 
-			new Object[] {Order.getUid(), Order.getSid(), Order.getOSeatNumber(), Order.getOSeatInfo(), Order.getOPayState(), Order.getOid()});
+		return jdbcTemplate.update("update olist set UID = ?, SID = ?, OSeatNumber = ?, OSeatInfo = ?, OPayState = ? where OID = ?", 
+			new Object[] {Order.getUid(), Order.getSid(), Order.getoSeatNumber(), Order.getoSeatInfo(), Order.getoPayState(), Order.getOid()});
 	}
 	
 	public int delete(int oid) {
-		return jdbcTemplate.update("delete from order where OID =" + oid + "");
+		return jdbcTemplate.update("delete from olist where OID =" + oid + "");
 	}
 	
 }

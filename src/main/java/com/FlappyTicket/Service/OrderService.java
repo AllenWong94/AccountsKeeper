@@ -29,6 +29,8 @@ public class OrderService {
 	
 	public Object findByUname(String name) {
 		
+
+		
 		return orderDAO.findByUID(userDAO.findByUserName(name).getUid());
 		
 	}
@@ -37,17 +39,19 @@ public class OrderService {
 	public Object newOrder(String Uname, int Sid, int SeatNum) {
 		Map<String, Object>map = new HashMap<String, Object>();
 		int Uid = userDAO.findByUserName(Uname).getUid();
-		String SeatInfo = SeatDAO.getSeatInfo(SeatNum, seatDAO.findById(sessionDAO.findById(Sid).getSeid()));
-		int Oid = orderDAO.insert(new Order(Uid, Sid, SeatNum, SeatInfo, 0));
+		String SeatInfo = seatDAO.getSeatInfo(SeatNum, seatDAO.findById(sessionDAO.findById(Sid).getSeid()));
+		int Oid = orderDAO.insert(new Order(1, Uid, Sid, SeatNum, SeatInfo, 0));
 		map.put("Ordernum", Oid);
-		
+		return map;
 	}
 	
 	public Object payOrder(int Oid) {
+		Map<String, Object>map = new HashMap<String, Object>();
 		Order tmp = orderDAO.findById(Oid);
-		tmp.setOPayState(1);
+		tmp.setoPayState(1);
 		orderDAO.update(tmp);
-		return "1";
+		map.put("Status", "Success");
+		return map;
 	}
 	
 }

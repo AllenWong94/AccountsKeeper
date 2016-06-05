@@ -1,5 +1,6 @@
 package com.FlappyTicket.Controller;
 
+import java.io.UnsupportedEncodingException;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -27,9 +28,10 @@ public class SearchController {
 	
 	@RequestMapping(value = "", method = RequestMethod.GET)
 	@ResponseBody
-	public Object findByName(@RequestParam("text") String text) {
+	public Object findByName(@RequestParam("text") String text) throws UnsupportedEncodingException {
 		
-		return SearchService.findByName(text);
+		String name = new String(text.getBytes("iso8859-1"),"utf-8");
+		return SearchService.findByName(name);
 		
 	}
 

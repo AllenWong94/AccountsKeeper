@@ -41,16 +41,6 @@ public class CinemaController {
 		
 	}
 
-
-	@RequestMapping(value = "Search", method = RequestMethod.GET)
-	@ResponseBody
-	public Object search(@RequestParam("MID") int id) {
-		
-		
-		return cinemaService.findByMID(id);
-		
-	}
-	
 	
 }
 

@@ -39,6 +39,14 @@ public class MovieDAO {
 		}
 	}
 	
+	public List<Movie> findByMovieNameLike(String mname) {
+		try {
+			return jdbcTemplate.query("select * from movie where MName like ?", new BeanPropertyRowMapper<Movie>(Movie.class), '%'+mname+'%');
+		} catch (EmptyResultDataAccessException e) {
+			return null;
+		}
+	}
+	
 	public int insert(final Movie Movie) {
 		KeyHolder generatedKeyHolder = new GeneratedKeyHolder();
 		jdbcTemplate.update(
