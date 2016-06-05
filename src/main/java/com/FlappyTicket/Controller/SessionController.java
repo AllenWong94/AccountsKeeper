@@ -17,29 +17,34 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.FlappyTicket.Service.*;
 
 @Controller
-@RequestMapping(value = "Cinema")
+@RequestMapping(value = "Movie")
 
-public class CinemaController {
+public class SessionController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	@Autowired
-	private CinemaService cinemaService;
+	private SessionService sessionService;
 	
-	@RequestMapping(value = "AllCinemaList", method = RequestMethod.GET)
+	@RequestMapping(value = "Session", method = RequestMethod.GET)
 	@ResponseBody
-	public Object getCurrentMovieList() {
-		return cinemaService.findAll();
+	public Object getSessionByID(@RequestParam("CID") int CID, @RequestParam("MID") int MID) {
+		return sessionService.findByCMID(CID, MID); //返回某电影院某电影所有场次
 		
 	}
 	
-	
-	@RequestMapping(value = "FindByMID", method = RequestMethod.GET)
+/*	@RequestMapping(value = "FindByCID", method = RequestMethod.GET)
 	@ResponseBody
-	public Object getCinemaByMID(@RequestParam("MID") int id) {
+	public Object getMovieByCID(@RequestParam("CID") int id) {
 		
+		logger.info("Welcome home! The client locale is {}.");
 		
-		return cinemaService.findByMID(id);
+		return movieService.findByCID(id);
 		
 	}
+	*/
+	
+	
 	
 	
 }

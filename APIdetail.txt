@@ -1,0 +1,6 @@
+电影类：
+
+/myapp/Cinema/AllCinemaList  所有电影院
+
+	格式例子：[{"cid":1,"cName":"新天地国际影院","cAddress":"广州大学城","cTel":"18826227624","cEmail":"1933443205@qq.com"}]
+

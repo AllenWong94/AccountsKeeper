@@ -11,32 +11,32 @@ import com.FlappyTicket.Model.*;
 import com.FlappyTicket.Dao.*;
 
 @Service
-public class CinemaService {
+public class MovieService {
 	@Autowired
-	private CinemaDAO cinemaDAO;
+	private MovieDAO movieDAO;
 	private SessionService sessionservice;
 	
-	public List<Cinema> findAll() {
-		return cinemaDAO.findAll();
+	public List<Movie> findAll() {
+		return movieDAO.findAll();
 
 	}
 	
-	public List<Cinema> findByMID(int mid) {
-	
-	
-		List<Cinema> res = new ArrayList<Cinema>();
+
+	public List<Movie> findByCID(int CID) {
+		List<Movie> res = new ArrayList<Movie>();
 		Set<Integer> set = new HashSet<Integer>();
-		
-		List<Session> Slist = sessionservice.findByMID(mid);
+		List<Session> Slist = sessionservice.findByCID(CID);
 		
 		for (int i = 0; i < Slist.size(); i++) {
-			set.add(Slist.get(i).getCid());
+			set.add(Slist.get(i).getMid());
 		}
 		
 		for (Integer value: set) {
-			res.add(cinemaDAO.findById(value));
+			res.add(movieDAO.findById(value));
 		}
 		return res;
+		
 	}
+	
 	
 }

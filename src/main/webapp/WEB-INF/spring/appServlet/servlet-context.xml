@@ -50,6 +50,8 @@
 	
 	<beans:bean id="cinemaDAO" class="com.FlappyTicket.Dao.CinemaDAO" />
 	<beans:bean id="cinemaService" class="com.FlappyTicket.Service.CinemaService" />
+	<beans:bean id="MovieDAO" class="com.FlappyTicket.Service.CinemaService" />
+	<beans:bean id="MovieService" class="com.FlappyTicket.Service.CinemaService" />
 	
 	
 	
