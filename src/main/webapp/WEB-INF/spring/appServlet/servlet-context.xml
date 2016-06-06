@@ -38,7 +38,7 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
 		<beans:property name="url"
-			value="jdbc:mysql://192.168.253.6:3306/birds_ticket?useUnicode=true&amp;characterEncoding=UTF-8" />
+			value="jdbc:mysql://172.18.41.173:3306/birds_ticket?useUnicode=true&amp;characterEncoding=UTF-8" />
 		<beans:property name="username" value="test_user1" />
 		<beans:property name="password" value="1234" />
 	</beans:bean>
