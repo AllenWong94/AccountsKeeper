@@ -1,7 +1,6 @@
 ## 软件设计综合实验
 
-###题目：
-  AccountsKeeper
+###题目:AccountsKeeper
 
 ###提交软件制品：
 ```bash
