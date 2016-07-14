@@ -4,7 +4,7 @@
   AccountsKeeper
 
 ##提交软件制品：
-'''bash
+```bash
   安装包
   《安装部署说明》
   《用户手册》
