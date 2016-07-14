@@ -1,2 +1,4 @@
 # AccountsKeeper
-This the project of Software Engineer in SYSU.
+
+#软件设计综合实验
+
