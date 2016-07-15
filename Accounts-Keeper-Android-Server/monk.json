@@ -1,0 +1,26 @@
+[
+  {
+    "username": "shawn",
+    "password": "shawn",
+    "nickname": "肖恩",
+    "email": "shawn@test.com"
+  },
+  {
+    "username": "sakura",
+    "password": "sakura",
+    "nickname": "小樱",
+    "email": "sakura@test.com"
+  },
+  {
+    "username": "gintoki",
+    "password": "gintoki",
+    "nickname": "银时",
+    "email": "gintoki@test.com"
+  },
+  {
+    "username": "morisan",
+    "password": "morisan",
+    "nickname": "小森",
+    "email": "morisan@test.com"
+  }
+]
