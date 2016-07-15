@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">记账大师</string>
+    <string name="app_name_en">Accounts Keeper</string>
+    <string name="action_settings">设置</string>
+
+    <!-- Splash Launcher-->
+    <string name="welcome">欢迎使用！</string>
+
+    <!-- Login Activity -->
+    <string name="user">用户名：</string>
+    <string name="password">密码：</string>
+    <string name="login">登陆</string>
+    <string name="new_user">新用户</string>
+    <string name="internet_error">您的网络好像出了点问题，请检查一下再试！</string>
+
+    <!-- Register Activity-->
+    <string name="nickname">昵称：</string>
+    <string name="email">邮箱：</string>
+    <string name="register">注册</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_launcher_splash">LauncherSplash</string>
+
+    <!-- Main Activity -->
+    <!-- Tab: Accounts -->
+
+    <!-- Tab: User Info -->
+    <string name="logout">退出当前账号</string>
+    <string name="change_nickname">修改昵称</string>
+    <string name="change_password">修改密码</string>
+
+    <!-- Tab: Add -->
+    <string name="hungry">今天还没有吃饭吗？</string>
+    <string name="buybuybuy">今天买买买了吗？\n快告诉我吧！^_^</string>
+    <string name="title_activity_update_password">UpdatePassword</string>
+
+    <!-- Update Password -->
+    <string name="old_password">原始密码：</string>
+    <string name="new_password">新密码：</string>
+</resources>
