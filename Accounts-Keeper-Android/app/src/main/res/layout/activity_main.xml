@@ -1,0 +1,276 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.android.accounts_keeper_android.MainActivity">
+
+    <!-- Tab: Today's Accounts -->
+    <RelativeLayout
+        android:id="@+id/main_account"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <!-- Contents -->
+        <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:layout_marginBottom="48dp">
+            <ListView
+                android:id="@+id/main_account_listview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </TableLayout>
+
+        <!-- Header -->
+        <RelativeLayout
+            android:id="@+id/main_account_header"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/header">
+            <!-- Calendar-->
+            <ImageView
+                android:id="@+id/main_img_calendar"
+                android:src="@drawable/ic_calendar"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true" />
+            <!-- Show Date -->
+            <TextView
+                android:id="@+id/main_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textColor="@color/darkblue"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_centerInParent="true"/>
+            <!-- Statistics-->
+            <ImageView
+                android:id="@+id/main_img_statistics"
+                android:src="@drawable/ic_statistics"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true" />
+        </RelativeLayout>
+
+        <com.prolificinteractive.materialcalendarview.MaterialCalendarView
+            android:visibility="gone"
+            android:id="@+id/main_account_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="#fff"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            app:mcv_selectionColor="#11cd6e" />
+
+
+    </RelativeLayout>
+
+    <!-- Tab: User Info-->
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/main_user"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#d9d9d9" >
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/activity_vertical_margin"
+                    android:paddingBottom="@dimen/activity_vertical_margin"
+                    android:orientation="vertical"
+                    android:gravity="center"
+                    android:background="@color/cyan">
+                    <ImageView
+                        android:src="@drawable/ic_user_gray"
+                        android:layout_width="64dp"
+                        android:layout_height="64dp" />
+                    <TextView
+                        android:id="@+id/main_user_name"
+                        android:text="@string/app_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/activity_vertical_margin"
+                        android:textColor="@color/darkblue"
+                        android:textStyle="bold"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingLeft="@dimen/activity_horizontal_margin"
+                    android:paddingRight="@dimen/activity_horizontal_margin"
+                    android:layout_marginTop="@dimen/activity_vertical_margin"
+                    android:layout_marginBottom="@dimen/activity_vertical_margin"
+                    android:orientation="vertical"
+                    android:background="@color/white">
+
+                    <TextView
+                        android:id="@+id/main_user_update_nickname"
+                        android:text="@string/change_nickname"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/darkblue"
+                        android:background="@drawable/header"
+                        android:gravity="center_vertical"/>
+
+                    <TextView
+                        android:id="@+id/main_user_update_password"
+                        android:text="@string/change_password"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:textSize="16sp"
+                        android:textColor="@color/darkblue"
+                        android:gravity="center_vertical"/>
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/main_user_logout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/activity_vertical_margin"
+                    android:text="@string/logout"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/darkblue"
+                    android:background="@color/cyan" />
+            </LinearLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+
+    <!-- Bottom Tab -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom">
+
+        <ImageView
+            android:id="@+id/main_img_account"
+            android:src="@drawable/ic_account"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:padding="12dp"
+            android:layout_centerInParent="true"
+            android:background="@color/red">
+            <ImageView
+                android:id="@+id/main_img_add"
+                android:src="@drawable/ic_add_gray"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_centerInParent="true"/>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/main_img_user"
+            android:src="@drawable/ic_user_gray"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <!-- Tab: Add Items -->
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/main_add"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eee">
+        <!-- Contents-->
+
+        <TextView
+            android:id="@+id/main_add_prompt"
+            android:text="@string/buybuybuy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:textSize="20sp"
+            android:textColor="@color/red"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/main_add_anim"
+            android:layout_width="match_parent"
+            android:layout_height="224dp"
+            android:layout_alignParentBottom="true"
+            android:background="#fff"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp" >
+                <ImageView
+                    android:id="@+id/main_add_food"
+                    android:src="@mipmap/ic_food"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentLeft="true" />
+                <ImageView
+                    android:id="@+id/main_add_fruits"
+                    android:src="@mipmap/ic_fruits"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_centerInParent="true" />
+                <ImageView
+                    android:id="@+id/main_add_necessary"
+                    android:src="@mipmap/ic_necessary"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="24dp">
+                <ImageView
+                    android:id="@+id/main_add_schoolthings"
+                    android:src="@mipmap/ic_schoolthings"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentLeft="true" />
+                <ImageView
+                    android:id="@+id/main_add_note"
+                    android:src="@mipmap/ic_note"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_centerInParent="true"  />
+                <ImageView
+                    android:id="@+id/main_add_cancel"
+                    android:src="@mipmap/ic_cancel"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+
+</RelativeLayout>

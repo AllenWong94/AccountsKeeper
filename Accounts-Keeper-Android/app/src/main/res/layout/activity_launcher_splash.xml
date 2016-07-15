@@ -1,0 +1,65 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:background="@color/white"
+    tools:context="com.android.accounts_keeper_android.LauncherSplash">
+
+    <LinearLayout
+        android:id="@+id/splash_logo"
+        android:layout_width="fill_parent"
+        android:layout_height="128dp"
+        android:orientation="horizontal"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="128dp"
+            android:layout_height="128dp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name_en"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/darkblue"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/darkblue"
+                android:layout_gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/splash_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"
+        android:gravity="center"
+        android:text="@string/welcome"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/darkblue" />
+
+</RelativeLayout>

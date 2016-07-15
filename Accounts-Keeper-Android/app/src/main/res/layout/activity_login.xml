@@ -1,0 +1,123 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:gravity="center_vertical"
+    tools:context=".LoginActivity">
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="128dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:src="@mipmap/ic_launcher"
+            android:layout_width="128dp"
+            android:layout_height="128dp" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name_en"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/darkblue"
+                android:layout_gravity="center" />
+
+            <TextView
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/darkblue"
+                android:layout_gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_marginTop="52dp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+        <TableRow>
+            <TextView
+                android:text="@string/user"
+                android:textSize="20sp"
+                android:textColor="@color/darkblue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/login_user"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:inputType="text"
+                android:textSize="20sp"
+                android:textColor="@color/darkblue" />
+        </TableRow>
+
+        <TableRow>
+            <TextView
+                android:text="@string/password"
+                android:textSize="20sp"
+                android:textColor="@color/darkblue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/login_pwd"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:inputType="textPassword"
+                android:textSize="20sp"
+                android:textColor="@color/darkblue" />
+        </TableRow>
+
+        <TextView
+            android:id="@+id/login_error"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_marginBottom="@dimen/activity_vertical_margin"
+            android:text="@string/app_name"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/red"
+            android:visibility="invisible" />
+
+        <Button
+            android:id="@+id/login_login"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/login"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/darkblue"
+            android:background="@color/cyan" />
+
+        <TextView
+            android:id="@+id/login_register"
+            android:layout_marginTop="@dimen/activity_vertical_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:text="@string/new_user"
+            android:textColor="@color/blue"/>
+    </TableLayout>
+
+</LinearLayout>

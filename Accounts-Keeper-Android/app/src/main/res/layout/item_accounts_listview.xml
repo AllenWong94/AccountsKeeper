@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableRow
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/item_accounts"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/activity_horizontal_margin"
+    android:gravity="left|center_vertical">
+
+    <ImageView
+        android:id="@+id/item_accounts_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:gravity="center_vertical|center_horizontal" />
+
+    <TextView
+        android:id="@+id/item_accounts_title"
+        android:text="@string/app_name"
+        android:layout_width="96dp"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/darkblue" />
+
+    <TextView
+        android:id="@+id/item_accounts_cost"
+        android:text="@string/app_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="16sp"
+        android:textColor="@color/darkblue" />
+
+</TableRow>
